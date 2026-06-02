@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(cookieParser())
 const port=3000;
 app.use(cors({
-  origin: "*",
+  origin: "https://pixel1045.netlify.app",
   credentials: true
 }));
 
