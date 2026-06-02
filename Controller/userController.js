@@ -29,7 +29,7 @@ const token=jwt.sign({name:userdata.email},"secretkey123",{expiresIn:"1h"});
 res.cookie("token",token,{
     httpOnly:true,
     secure:true,
-    sameSite:"strict",
+    sameSite:"none",
     maxAge:60*60*1000,
 
 })
@@ -61,7 +61,7 @@ const token=jwt.sign({name:userdata.email},"secretkey123",{expiresIn:"1h"});
 res.cookie("token",token,{
     httpOnly:true,
     secure:true,
-    sameSite:"strict",
+    sameSite:"none",
     maxAge:60*60*1000,
 
 })
@@ -110,7 +110,7 @@ export const logoutUser =
 
       secure:true,
 
-      sameSite:"strict"
+      sameSite:"none"
     }
   )
 
