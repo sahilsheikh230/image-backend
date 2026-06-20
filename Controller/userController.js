@@ -27,10 +27,10 @@ await newuser.save();
 
 const token=jwt.sign({name:userdata.email},"secretkey123",{expiresIn:"1h"});
 res.cookie("token",token,{
-    httpOnly:true,
-    secure:true,
-    sameSite:"none",
-    maxAge:60*60*1000,
+    httpOnly: true,
+  secure: false,
+  sameSite: "strict",
+  maxAge: 60 * 60 * 1000
 
 })
 
@@ -59,10 +59,10 @@ return res.status(500).json({message:"Internal server error"})
 else{
 const token=jwt.sign({name:userdata.email},"secretkey123",{expiresIn:"1h"});
 res.cookie("token",token,{
-    httpOnly:true,
-    secure:true,
-    sameSite:"none",
-    maxAge:60*60*1000,
+httpOnly: true,
+  secure: false,
+  sameSite: "strict",
+  maxAge: 60 * 60 * 1000
 
 })
 return res.status(200).json({message:"User Loggged in Successfully!"})
@@ -105,12 +105,10 @@ export const logoutUser =
     "token",
 
     {
-
-      httpOnly:true,
-
-      secure:true,
-
-      sameSite:"none"
+httpOnly: true,
+  secure: false,
+  sameSite: "strict",
+  
     }
   )
 
